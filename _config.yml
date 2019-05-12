@@ -1,0 +1,46 @@
+# Site settings
+title         : "Cargadores"
+meta-title    : "💥 COMPRA CARGADORES® 【Ofertas de Cargadores】"
+description   : "Compra cargadores para cualquiera de tus dispositivos ✅ En nuestra TIENDA DE CARGADORES obtendrás ofertas y ➕ de las marcas 🔝 líderes."
+keywords      : "Cargador, cargadores, tienda de cargadores, comprar cargadores, tienda cargadores"
+url           : https://cargadores.gligan.info
+baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+cover         : "" # image uri like logo/cover image for site seo
+
+# google_analytics  : UA-XXXXX-XX
+# twitter_username  : ""
+comments_enabled  : false # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : ""
+postshare_enabled : false
+
+# Build settings
+permalink   : /:title/
+markdown    : kramdown
+highlighter : rouge
+
+source      : ./
+destination : ./_site
+
+# Sass configuration
+sass:
+  sass_dir  : assets/scss
+  style     : compressed # expanded
+
+# Author settings
+author:
+  name     : "Ronaldo David Gomes Gligan"
+  web      : https://gligan.info
+
+plugins:
+  - jekyll-sitemap
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script"]

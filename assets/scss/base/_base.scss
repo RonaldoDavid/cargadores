@@ -1,0 +1,256 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.58;
+  letter-spacing: -0.3px;
+  font-family: 'Space Mono', monospace;
+  text-rendering: optimizeLegibility;
+  background: $negr;
+  color: $blan;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+button {
+  border: 0;
+  padding: 10px 15px;
+  background: $gri3;
+  color: #fff;
+  font-family: 'Space Mono';
+  cursor: pointer;
+}
+
+.menu {
+  z-index: 10000;
+  background: $gri1;
+  padding: 10px 10%;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 48px;
+}
+
+.logo span {
+  display: inline-block;
+  float: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo svg {
+  width: 22px;
+  height: 22px;
+  transform: rotate(20deg);
+}
+
+.menu .right {
+  float: right;
+  display: inline-block;
+  line-height: 26px;
+}
+
+.menu .right #menu_btn {
+  font-style: italic;
+  cursor: pointer;
+}
+
+.header {
+  margin-top: 48px;
+  padding: 50px 10%;
+  background: $gri2;
+  // background-image: url();
+  background-position: left center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  // height: 50vh;
+}
+
+@media (min-aspect-ratio: 1/2) {
+	.header { background-image: none; }
+}
+
+@media (min-aspect-ratio: 1/1) {
+	// .header { background-image: url(https://images.unsplash.com/photo-1517320069935-381614f8c1e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80); }
+	.header { background-image: url(  https://images.unsplash.com/photo-1534434050285-43398fb24198?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80); }
+}
+
+.header p {
+  max-width: 350px;
+  text-shadow: 0 0 30px rgba(0, 0, 0, .8);
+}
+
+.header .title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.grid {
+  display: block;
+  padding: 50px 10%;
+  display: flex;
+}
+
+.grid.products {
+  background: #fff;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid.products:first-child {
+  flex: 2;
+}
+
+.grid.products div {
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  background: #fff;
+  color: #000;
+  flex: 1;
+  padding: 15px;
+}
+
+.grid.products div img {
+  margin: 0 auto;
+  display: block;
+  max-width: 300px;
+  min-width: 50px;
+}
+
+.grid div > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.products div > a { color: #000; }
+
+.grid.products div p.title {
+  margin-top: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.grid.products div p .brand {
+  background: $gri2;
+  color: white;
+  font-style: italic;
+}
+
+.grid.products div .price {
+  margin-bottom: 5px;
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  text-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+.grid.products div .price sup {
+  font-size: 11px;
+  color: gray;
+}
+
+.grid.products div button {
+  width: 100%;
+  // border-radius: 10px;
+  opacity: .5;
+  transition: .2s;
+} .grid.products div button:hover {
+  opacity: 1;
+}
+
+.grid.brands {
+  background: $gri1;
+  overflow: auto;
+}
+
+.grid.brands div {
+  flex: 1;
+  min-width: 220px;
+  flex-wrap: wrap;
+  cursor: pointer
+}
+
+.grid.brands div span {
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.grid div small {
+  font-size: 11px;
+}
+
+.grid::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+.grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+.grid::-webkit-scrollbar-thumb {
+  background-color: $gri2;
+}
+
+input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-family: 'Space Mono';
+  font-size: 16px;
+}
+
+.search {
+  position: sticky;
+  top: 48px;
+  z-index: 1000;
+  background: $bla1;
+  padding: 15px 10%;
+  display: flex;
+}
+
+#search_input {
+  flex: 1;
+}
+
+#go {
+  color: $gri3;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.links {
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: calc(100vh - 48px);
+  width: 100vw;
+  background: $gri2;
+  padding: 20px 10vw;
+}
+
+footer {
+	padding: 50px 10%;
+}
+
+footer a {
+	color: #fff;
+}
+
+.block { display: block; }
