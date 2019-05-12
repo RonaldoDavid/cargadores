@@ -22,7 +22,6 @@
   db.collection("productos").get().then((querySnapshot) => {
   	$(grid).html('');
 	  querySnapshot.forEach((doc) => {
-
 	  	$(grid).append(`
 				<div>
 					<a target="_blank" href="${doc.data().producto_url}">
@@ -32,28 +31,66 @@
 			      	<span class="brand" style="text-transform:uppercase">${doc.data().marca}</span>
 							${doc.data().titulo}
 			      </p>
-			      <button>Ver producto</button>
+			      <button>${calc_text(doc.data().precio)}</button>
 			    </a>
 		    </div>
 	  	`);
-
-	  	 console.log(`${doc.data()}`);
 	  });
 	});
-	
+
   function ir_amazon() {
   	
   	let string = $('#search_input').val();
 
   	$('#search_input').val('');
 
-  	var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
-		if (win) {
-	    win.focus();
-		} else {
-	    alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
+  	if ($('#search_input').val() != '') {
+	  	var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
+			if (win) {
+		    win.focus();
+			} else {
+		    alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
+			}
 		}
 
+  }
+
+  function ir_amazon_bottom() {
+  	
+  	let string = $('#search_in_reload').val();
+
+  	$('#search_in_reload').val('');
+
+  	if ($('#search_in_reload').val() != '') {
+	  	var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
+			if (win) {
+		    win.focus();
+			} else {
+		    alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
+			}
+		}
+  }
+
+  $('#search_input').keypress(function (e) {
+		if(e.which == 13 && $('#search_input').val() != '') {
+	    ir_amazon();
+		}
+	});
+
+	$('#search_in_reload').keypress(function (e) {
+		if(e.which == 13 && $('#search_in_reload').val() != '') {
+	    ir_amazon_bottom();
+		}
+	});
+
+  function calc_text(precio) {
+  	if (precio >= 10) {
+  		return "Ver producto";
+  	} else if (precio >= 3) {
+  		return "Ver oferta";
+  	} else {
+  		return "Ver super ofera";
+  	}
   }
 
   $('#search_input').focus();
