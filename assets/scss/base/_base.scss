@@ -38,7 +38,7 @@ span {
 .menu {
   z-index: 10000;
   background: $gri1;
-  padding: 10px 10%;
+  padding: 10px 10vw;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -59,16 +59,16 @@ span {
   transform: rotate(20deg);
 }
 
-.menu .right {
-  float: right;
-  display: inline-block;
-  line-height: 26px;
-}
+// .menu .right {
+//   float: right;
+//   display: inline-block;
+//   line-height: 26px;
+// }
 
-.menu .right #menu_btn {
-  font-style: italic;
-  cursor: pointer;
-}
+// .menu .right #menu_btn {
+//   font-style: italic;
+//   cursor: pointer;
+// }
 
 .header {
   margin-top: 48px;
@@ -130,13 +130,14 @@ span {
 }
 
 .grid.products div {
-  cursor: pointer;
   border: 1px solid #f0f0f0;
   // box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   background: #fff;
   color: #000;
   flex: 1;
   padding: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .grid.products div img {
@@ -231,8 +232,8 @@ input {
 
 .search {
   position: sticky;
-  top: 48px;
-  z-index: 1000;
+  top: 0;
+  z-index: 9999999;
   background: $bla1;
   padding: 15px 10%;
   display: flex;
