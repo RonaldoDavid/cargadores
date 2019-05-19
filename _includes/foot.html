@@ -9,13 +9,13 @@
 <script>
 
   var firebaseConfig = {
-	apiKey: "AIzaSyBPgyUm6JCba0MIJw-C-b2uG9OZ83VEHwM",
-	authDomain: "cargadores-firebase.firebaseapp.com",
-	databaseURL: "https://cargadores-firebase.firebaseio.com",
-	projectId: "cargadores-firebase",
-	storageBucket: "cargadores-firebase.appspot.com",
-	messagingSenderId: "18408348384",
-	appId: "1:18408348384:web:cba428908763de2c"
+		apiKey: "AIzaSyBPgyUm6JCba0MIJw-C-b2uG9OZ83VEHwM",
+		authDomain: "cargadores-firebase.firebaseapp.com",
+		databaseURL: "https://cargadores-firebase.firebaseio.com",
+		projectId: "cargadores-firebase",
+		storageBucket: "cargadores-firebase.appspot.com",
+		messagingSenderId: "18408348384",
+		appId: "1:18408348384:web:cba428908763de2c"
   };
   firebase.initializeApp(firebaseConfig);
 
@@ -40,63 +40,64 @@
 			`);
 	  });
 	  $('.lazy').Lazy({
-	  	effect: 'fadeIn'
+	  	effect: "fadeIn",
+      effectTime: 500,
+      threshold: 0
 	  });
 	});
 
-  function ir_amazon() {
+function ir_amazon() {
 	
 	let string = $('#search_input').val();
 
-	$('#search_input').val('');
+	console.log(string);
 
 	if ($('#search_input').val() != '') {
 		var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
-			if (win) {
+		if (win) {
 			win.focus();
-			} else {
+		} else {
 			alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
-			}
 		}
-
-  }
+	}
+	$('#search_input').val('');
+}
 
   function ir_amazon_bottom() {
 	
-	let string = $('#search_in_reload').val();
+		let string = $('#search_in_reload').val();
 
-	$('#search_in_reload').val('');
-
-	if ($('#search_in_reload').val() != '') {
-		var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
+		if ($('#search_in_reload').val() != '') {
+			var win = window.open(`https://www.amazon.es/s?k=${string}&tag=cargadores0a-21`, '_blank');
 			if (win) {
-			win.focus();
+				win.focus();
 			} else {
-			alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
+				alert('Tu navegador no nos permite buscar tu cargador perfecto, usa otro.');
 			}
 		}
+		$('#search_in_reload').val('');
   }
 
   $('#search_input').keypress(function (e) {
 		if(e.which == 13 && $('#search_input').val() != '') {
-		ir_amazon();
+			ir_amazon();
 		}
 	});
 
 	$('#search_in_reload').keypress(function (e) {
 		if(e.which == 13 && $('#search_in_reload').val() != '') {
-		ir_amazon_bottom();
+			ir_amazon_bottom();
 		}
 	});
 
   function calc_text(precio) {
-	if (precio >= 10) {
-		return "Ver producto";
-	} else if (precio >= 3) {
-		return "Ver oferta";
-	} else {
-		return "Ver super ofera";
-	}
+		if (precio >= 10) {
+			return "Ver producto";
+		} else if (precio >= 3) {
+			return "Ver oferta";
+		} else {
+			return "Ver super ofera";
+		}
   }
 
   $('#search_input').focus();
