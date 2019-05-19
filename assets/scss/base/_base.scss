@@ -1,4 +1,8 @@
 
+html {
+  background: $blan;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +14,10 @@ body {
   background: $negr;
   color: $blan;
   overflow-x: hidden;
+  // Pruebas
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 p {
@@ -265,10 +273,59 @@ input {
 
 footer {
 	padding: 50px 10%;
-}
 
-footer a {
-	color: #fff;
+  a {
+    color: #fff;
+  }
 }
 
 .block { display: block; }
+
+// Newsletter
+
+.newsletter {
+  background: $bla3;
+  // background-image: url("/assets/images/newsletter.png");
+  filter: grayscale(100%);
+  background-position: left center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding: 50px 10vw;
+  display: flex;
+  color: $gri2;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .left {
+    flex: 1;
+    min-width: 300px;
+    width: 100%;
+    span {
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-style: italic;
+      background: $bla2;
+    }
+  }
+
+  .right {
+    flex: 1;
+    max-width: 350px;
+    min-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    
+    * {
+      display: block !important;
+      width: 100%;
+    }
+
+    input {
+      background: $gri2;
+      padding: 10px 15px;
+      color: #fff;
+    }
+  }
+
+}
