@@ -93,7 +93,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bourbon
   bundler (~> 2.0.1)
   html-proofer
   jekyll-paginate
